@@ -1,0 +1,8 @@
+S->i E t S | i E t S e S| a
+E->b
+
+E->T E_1
+E_1->+ T E_1 | ε
+T->F T_1
+T_1->* F T_1 | ε
+F->( E ) | id

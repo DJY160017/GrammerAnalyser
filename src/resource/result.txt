@@ -1,0 +1,40 @@
+output: E->T E_1
+output: T->F T_1
+output: F->( E )
+match: (
+output: E->T E_1
+output: T->F T_1
+output: F->( E )
+match: (
+output: E->T E_1
+output: T->F T_1
+output: F->id
+match: id
+output: T_1->ε
+output: E_1->+ T E_1
+match: +
+output: T->F T_1
+output: F->id
+match: id
+output: T_1->ε
+output: E_1->ε
+match: )
+output: T_1->* F T_1
+match: *
+output: F->id
+match: id
+output: T_1->ε
+output: E_1->- T E_1
+match: -
+output: T->F T_1
+output: F->id
+match: id
+output: T_1->ε
+output: E_1->ε
+match: )
+output: T_1->/ F T_1
+match: /
+output: F->id
+match: id
+output: T_1->ε
+output: E_1->ε

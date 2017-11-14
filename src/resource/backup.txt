@@ -1,0 +1,44 @@
+S->i E t S | i E t S e S| a
+E->b
+
+E->T E_1
+E_1->+ T E_1 | ε
+T->F T_1
+T_1->* F T_1 | ε
+F->( E ) | id
+
+StartTag:
+E
+Grammar:
+E->T E_1
+E_1->+ T E_1 | - T E_1 | ε
+T->F T_1
+T_1->* F T_1 | / F T_1 | ε
+F->( E ) | id
+
+S->id = E ;
+S->if ( C ) { S } else { S }
+S->while ( C ) { S }
+E->T E_1
+E_1->+ T E_1
+E_1->ε
+T->F T_1
+T_1->* F T_1
+T_1->ε
+F->( E )
+F->num
+F->id
+C->D C_1
+C_1->&& D C_1
+C_1->ε
+D->( C )
+D->id == num
+
+while(a==0){
+	if(b==1&&b==2){
+		a=1*(2+3);
+	}
+	else{
+		b=1+2;
+	}
+}
